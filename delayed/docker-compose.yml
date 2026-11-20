@@ -1,0 +1,13 @@
+services:
+  rabbitmq:
+    build: .
+    image: rabbitmq-delayed:local
+    container_name: rabbitmq-delayed
+    ports:
+      - "5673:5672"
+      - "15673:15672"
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+
+volumes:
+  rabbitmq_data:
